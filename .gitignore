@@ -8,3 +8,5 @@ package.json
 package-lock.json
 .vscode/*
 vue.config.js
+jsconfig.json
+README.md
