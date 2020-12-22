@@ -38,12 +38,14 @@
             <div class="nk-product-cat-3">
               <div class="nk-product-image">
                 <img
-                  src="https://cdn.patria.org.ve/patria/img/bonos/bono_felicidades_venezuela.png"
+                  src="https://www.infobae.com/new-resizer/G5HFzK4b4Arlhbwo88XELwDtabM=/420x560/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/NJDOID7FTNCB3G56QVT3GLJQJI.jpg"
                 />
               </div>
               <div class="nk-product-cont">
                 <div class="nk-gap-1"></div>
-                <h3 class="nk-product-title h5">bono felicidades venezuela</h3>
+                <h3 class="nk-product-title h5">
+                  Mia Khalifa confesó que por culpa de una cirugía sacrificó...
+                </h3>
                 <div class="nk-gap"></div>
                 <div class="nk-product-price"><label>6$</label></div>
                 <a
