@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import VueCarousel from 'vue-carousel';
+
 Vue.config.productionTip = false
 
 import VueWait from 'vue-wait'
@@ -20,6 +22,7 @@ import "@/assets/css/styles.css"
 import "@/assets/css/summernote-bs4.css"
 import "@/assets/css/all.css"
 
+Vue.use(VueCarousel);
 Vue.use(VueWait)
 Vue.use(Notify, {
   position: "bottom-right",

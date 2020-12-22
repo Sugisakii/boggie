@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="nk-gap-3"></div>
     <div
       class="d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center"
     >
