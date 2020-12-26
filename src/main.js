@@ -12,18 +12,6 @@ import VueWait from 'vue-wait'
 import Notify from 'vue2-notify'
 import VueCookies from 'vue-cookies'
 
-import "@/assets/bootstrap/css/bootstrap.min.css"
-import "@/assets/css/bootstrap-slider.min.css"
-import "@/assets/css/custom.css"
-import "@/assets/css/default-skin.css"
-import "@/assets/css/flickity.min.css"
-import "@/assets/css/goodgames.css"
-import "@/assets/css/ionicons.min.css"
-import "@/assets/css/photoswipe.css"
-import "@/assets/css/styles.css"
-import "@/assets/css/summernote-bs4.css"
-import "@/assets/css/all.css"
-
 Vue.use(VueCookies)
 Vue.use(VueCarousel);
 Vue.use(VueWait)
