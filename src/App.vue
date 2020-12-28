@@ -161,6 +161,10 @@ export default {
       console.log(response);
       this.MenuItems = [
         {
+          to: "/home",
+          name: "Inicio",
+        },
+        {
           to: "/servidores",
           name: "Servidores",
         },
