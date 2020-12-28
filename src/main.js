@@ -6,12 +6,19 @@ import store from './store'
 import VueCarousel from 'vue-carousel';
 import axios from 'axios';
 
+import { BootstrapVue } from 'bootstrap-vue'
+
 Vue.config.productionTip = false
 
 import VueWait from 'vue-wait'
 import Notify from 'vue2-notify'
 import VueCookies from 'vue-cookies'
 
+//import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+
+Vue.use(BootstrapVue)
 Vue.use(VueCookies)
 Vue.use(VueCarousel);
 Vue.use(VueWait)
