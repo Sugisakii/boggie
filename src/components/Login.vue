@@ -193,6 +193,8 @@ import axios from "axios";
 import wait from "./wait";
 import { mapState } from "vuex";
 import store from "../store";
+import trim from "locutus/php/strings/trim";
+
 export default {
   components: {
     wait,
@@ -234,7 +236,35 @@ export default {
       this.mode = mode;
     },
     ForgotPassword() {},
-    SignIn() {},
+    SignUp() {
+      if (trim(this.user) == "") {
+        this.user = "";
+        return;
+      }
+      if (trim(this.pass) == "") {
+        this.pass = "";
+        return;
+      }
+      if (this.pass != this.pass2) {
+        this.pass2 = "";
+        this.$notify("Las contraseñas no coinciden");
+        return;
+      }
+      this.$wait.start("Login");
+      axios
+        .post(this.API + "/register.php", {
+          user: this.user,
+          pass: this.pass,
+          email: this.email,
+        })
+        .then((res) => {
+          this.$wait.end("Login");
+          if (res.data.error == false) {
+            this.$notify.success(res.data.message);
+            this.Reset();
+          }
+        });
+    },
   },
   data() {
     return {
