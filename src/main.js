@@ -38,7 +38,12 @@ axios.interceptors.response.use(function (response) {
 			Vue.$notify(response.data.message, "error");
 		}
 	}
+	return response
 });
+axios.interceptors.request.use(config => {
+	config.withCredentials = true
+	return config
+})
 
 new Vue({
 	router,

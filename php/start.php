@@ -1,7 +1,4 @@
 <?php
-require_once('./class.php');
-if(isset($_SESSION['id'])) {
-    $api->DropArray($_SESSION);
-}
-
-?> 
+require_once('./db.conf.php');
+$a = $_SESSION;
+$api->DropArray($a);

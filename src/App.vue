@@ -20,7 +20,7 @@
             </div>
             <div class="nk-contacts-right">
               <ul class="nk-contacts-icons">
-                <li v-if="!Logged">
+                <li v-if="!session.Logged">
                   <a
                     href="javascript:void(0)"
                     data-toggle="modal"
@@ -29,7 +29,10 @@
                     ><span class="fa fa-user"></span
                   ></a>
                 </li>
-                <li>
+                <li v-if="session.Logged">
+                  <label class="nk-feature-title">{{ session.user }}</label>
+                </li>
+                <li v-if="session.Logged">
                   <span class="nk-cart-toggle"
                     ><span class="nk-badge">1</span
                     ><span class="fa fa-users"></span
@@ -126,7 +129,7 @@
         </b-sidebar>
       </div>
     </div>
-    <div><Login v-if="!Logged"></Login></div>
+    <div><Login v-if="!session.Logged"></Login></div>
     <router-view />
   </div>
 </template>
@@ -143,7 +146,8 @@
 <script>
 import axios from "axios";
 import Login from "./components/Login";
-import { mapMutations } from "vuex";
+import { mapState } from "vuex";
+import store from "./store";
 export default {
   name: "App",
   components: {
@@ -155,10 +159,12 @@ export default {
       MenuItems: [],
     };
   },
-  methods: { ...mapMutations["SetSession"] },
+  computed: {
+    ...mapState(["session"]),
+  },
   mounted() {
     axios.post(this.API + "/start.php").then((response) => {
-      console.log(response);
+      store.commit("SetSession", response.data);
       this.MenuItems = [
         {
           to: "/home",
@@ -181,6 +187,7 @@ export default {
           to: "/chat",
           name: "Chat Global",
         },
+
         {
           to: "/tienda",
           name: "tienda",

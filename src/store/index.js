@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    session: null
+    session: { Logged: false }
   },
   mutations: {
     SetSession(state, val) {
