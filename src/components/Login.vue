@@ -235,7 +235,20 @@ export default {
       this.Reset();
       this.mode = mode;
     },
-    ForgotPassword() {},
+    ForgotPassword() {
+      this.$wait.start("Login");
+      axios
+        .post(this.API + "/recover.php", {
+          email: this.user,
+        })
+        .then((res) => {
+          if (res.data.error == false) {
+            this.$notify.success(res.data.message);
+            this.Reset();
+          }
+          this.$wait.end("Login");
+        });
+    },
     SignUp() {
       if (trim(this.user) == "") {
         this.user = "";

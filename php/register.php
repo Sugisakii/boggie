@@ -1,5 +1,6 @@
 <?php
 require_once('./db.conf.php');
+
 $post = $api->readpostdata();
 if (!$post || !isset($post->user) || !isset($post->email) || !isset($post->pass) || empty(trim($post->user)) || empty(trim($post->email)) || empty(trim($post->pass))) {
     $api->DropError("Invalid Arguments");
