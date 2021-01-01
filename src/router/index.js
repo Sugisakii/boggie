@@ -6,6 +6,7 @@ import Noticias from '../views/Noticias.vue'
 import Top from '../views/Top.vue'
 import Servidores from '../views/Servidores.vue'
 import Chat from '../views/Chat.vue'
+import Recover from '../views/Recover.vue'
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,7 @@ const routes = [
     path: '/servidores',
     name: 'Servidores',
     component: Servidores
-  },{
+  }, {
     path: '/noticias',
     name: 'Noticias',
     component: Noticias
@@ -31,14 +32,18 @@ const routes = [
     path: '/top',
     name: 'Top',
     component: Top
-  },{
+  }, {
     path: '/tienda',
     name: 'Tienda',
     component: Tienda
-  },{
+  }, {
     path: '/chat',
     name: 'Chat',
     component: Chat
+  }, {
+    path: '/recover',
+    name: 'Recover',
+    component: Recover
   }
 ]
 

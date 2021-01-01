@@ -165,6 +165,7 @@ export default {
   mounted() {
     axios.post(this.API + "/start.php").then((response) => {
       store.commit("SetSession", response.data);
+      this.$emit("SessionLoad");
       this.MenuItems = [
         {
           to: "/home",
