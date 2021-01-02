@@ -131,12 +131,10 @@ export default {
     ...mapState(["session"]),
   },
   mounted() {
-    this.$parent.$on("SessionLoad", () => {
-      if (typeof this.session.recover_token == "undefined") {
-        router.push("/home");
-        return;
-      }
-    });
+    if (typeof this.session.recover_token == "undefined") {
+      router.push("/home");
+      return;
+    }
   },
 };
 </script>

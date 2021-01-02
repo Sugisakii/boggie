@@ -28,6 +28,39 @@ Vue.use(Notify, {
 	closeButtonClass: "close"
 })
 Vue.prototype.API = "https://api.sugiweb.ga"
+Vue.prototype.MenuItems = [
+	{
+		to: "/home",
+		name: "Inicio",
+		logged: false,
+	},
+	{
+		to: "/servidores",
+		name: "Servidores",
+		logged: false,
+	},
+	{
+		to: "/noticias",
+		name: "Noticias",
+		logged: false,
+	},
+	{
+		to: "/top",
+		name: "Top Global",
+		logged: false,
+	},
+
+	{
+		to: "/chat",
+		name: "Chat Global",
+		logged: true,
+	},
+	{
+		to: "/tienda",
+		name: "tienda",
+		logged: true,
+	},
+];
 
 axios.interceptors.response.use(function (response) {
 	// Any status code that lie within the range of 2xx cause this function to trigger

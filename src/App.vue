@@ -30,7 +30,31 @@
                   ></a>
                 </li>
                 <li v-if="session.Logged">
-                  <label class="nk-feature-title">{{ session.user }}</label>
+                  <span class="nk-cart-toggle"
+                    ><span class="nk-feature-title">{{
+                      session.user
+                    }}</span></span
+                  >
+                  <div class="nk-cart-dropdown">
+                    <div class="text-center">
+                      <a
+                        class="nk-btn nk-btn-rounded nk-btn-color-main-1 nk-btn-hover-color-white"
+                        href="javascript:void(0)"
+                        ><strong>perfil</strong></a
+                      >
+                      <a
+                        class="nk-btn nk-btn-rounded nk-btn-color-main-1 nk-btn-hover-color-white"
+                        href="javascript:void(0)"
+                        ><strong>inventario</strong></a
+                      >
+                      <a
+                        class="nk-btn nk-btn-rounded nk-btn-color-main-1 nk-btn-hover-color-white"
+                        href="javascript:void(0)"
+                        v-on:click="Logoff"
+                        ><strong>Cerrar Sesion</strong></a
+                      >
+                    </div>
+                  </div>
                 </li>
                 <li v-if="session.Logged">
                   <span class="nk-cart-toggle"
@@ -76,7 +100,11 @@
                 data-nav-mobile="#nk-nav-mobile"
               >
                 <li v-for="(item, index) in MenuItems" :key="index">
-                  <router-link :to="item.to">{{ item.name }}</router-link>
+                  <router-link
+                    :to="item.to"
+                    v-if="item.logged == session.Logged || !item.logged"
+                    >{{ item.name }}</router-link
+                  >
                 </li>
               </ul>
               <ul class="nk-nav nk-nav-right nk-nav-icons">
@@ -121,7 +149,11 @@
             <div class="nk-navbar-mobile-content">
               <div class="nk-nav">
                 <li v-for="(item, index) in MenuItems" :key="index">
-                  <router-link :to="item.to">{{ item.name }}</router-link>
+                  <router-link
+                    :to="item.to"
+                    v-if="item.logged == session.Logged || !item.logged"
+                    >{{ item.name }}</router-link
+                  >
                 </li>
               </div>
             </div>
@@ -130,7 +162,7 @@
       </div>
     </div>
     <div><Login v-if="!session.Logged"></Login></div>
-    <router-view />
+    <router-view v-if="DisplayView" />
   </div>
 </template>
 <style>
@@ -156,45 +188,45 @@ export default {
   data() {
     return {
       Logged: false,
-      MenuItems: [],
+      DisplayView: false,
+      //MenuItems: [],
     };
   },
   computed: {
     ...mapState(["session"]),
   },
-  mounted() {
+  beforeMount() {
     axios.post(this.API + "/start.php").then((response) => {
       store.commit("SetSession", response.data);
-      this.$emit("SessionLoad");
-      this.MenuItems = [
-        {
-          to: "/home",
-          name: "Inicio",
-        },
-        {
-          to: "/servidores",
-          name: "Servidores",
-        },
-        {
-          to: "/noticias",
-          name: "Noticias",
-        },
-        {
-          to: "/top",
-          name: "Top Global",
-        },
-
-        {
-          to: "/chat",
-          name: "Chat Global",
-        },
-
-        {
-          to: "/tienda",
-          name: "tienda",
-        },
-      ];
+      this.DisplayView = true;
+      this.$nextTick(() => {
+        this.$emit("SessionLoad");
+      });
+      for (let i = 0; i < this.MenuItems.length; i++) {
+        let x = this.MenuItems[i];
+        if (!x.logged) {
+          continue;
+        }
+        if (!this.session.Logged) {
+          if (this.$router.currentRoute.path == x.to) {
+            this.$router.push("/home");
+            this.$notify.error(
+              "No puedes acceder a esta seccion si no estas loggeado"
+            );
+          }
+        }
+      }
     });
+  },
+  methods: {
+    Logoff() {
+      axios.post(this.API + "/logoff.php").then((res) => {
+        if (!res.data.error) {
+          store.commit("SetSession", res.data);
+          this.$router.push("/home");
+        }
+      });
+    },
   },
 };
 </script>

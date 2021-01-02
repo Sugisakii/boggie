@@ -17,7 +17,9 @@
             </div>
             <div class="nk-product-cont">
               <h3 class="nk-product-title h5">
-                <a href="javascript:void(0)">bono navidades felices y seguras</a>
+                <a href="javascript:void(0)"
+                  >bono navidades felices y seguras</a
+                >
               </h3>
               <div class="nk-gap-1"></div>
               <div class="nk-product-price"><label>$3</label></div>
