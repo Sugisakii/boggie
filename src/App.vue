@@ -69,6 +69,7 @@
                         >No tienes Solicitudes de Amistad</a
                       >
                     </div>
+
                     <div class="nk-gap-2"></div>
                     <div class="text-center">
                       <a
@@ -230,4 +231,3 @@ export default {
   },
 };
 </script>
- 

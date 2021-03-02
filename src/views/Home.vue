@@ -1,45 +1,74 @@
 <template>
   <div class="home">
     <div>
-      <div class="container">
-        <div class="nk-gap-2"></div>
-        <div class="row vertical-gap">
-          <div class="col-lg-5">
-            <div class="nk-feature-1">
-              <div class="nk-feature-icon">
-                <img
-                  src="https://dejagerart.com/wp-content/uploads/2018/09/Test-Logo-Circle-black-transparent.png"
-                  width="90"
-                  height="90"
-                />
+      <div>
+        <div class="nk-main">
+          <div class="container">
+            <div class="nk-gap-2"></div>
+            <div class="row d-lg-flex justify-content-lg-center vertical-gap">
+              <div class="col-lg-4">
+                <div class="nk-feature-1">
+                  <div class="nk-feature-icon">
+                    <img
+                      class="rounded-circle"
+                      src="https://arhsnewspaper.com/wp-content/uploads/2016/12/test.jpg"
+                      width="86"
+                      height="86"
+                    />
+                  </div>
+                  <div class="nk-feature-cont" style="padding-left: 13px">
+                    <h3 class="nk-feature-title">
+                      <a href="javascript:void(0)">Clan name</a>
+                    </h3>
+                    <h4 class="nk-feature-title text-main-1">
+                      <a href="javascript:void(0)">ver stats del clan</a>
+                    </h4>
+                  </div>
+                </div>
               </div>
-              <div class="nk-feature-cont">
-                <h3 class="nk-feature-title">clan name</h3>
-                <a href="javascript:void(0)">
-                  <h4 class="nk-feature-title text-main-1">Stats del clan</h4>
-                </a>
+              <div class="col-lg-4">
+                <div class="nk-feature-1">
+                  <div class="nk-feature-icon">
+                    <img
+                      class="rounded-circle"
+                      src="https://arhsnewspaper.com/wp-content/uploads/2016/12/test.jpg"
+                      width="86"
+                      height="86"
+                    />
+                  </div>
+                  <div class="nk-feature-cont" style="padding-left: 13px">
+                    <h3 class="nk-feature-title">
+                      <a href="javascript:void(0)">Clan name</a>
+                    </h3>
+                    <h4 class="nk-feature-title text-main-1">
+                      <a href="javascript:void(0)">ver stats del clan</a>
+                    </h4>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-5">
-            <div class="nk-feature-1">
-              <div class="nk-feature-icon">
-                <img
-                  src="https://dejagerart.com/wp-content/uploads/2018/09/Test-Logo-Circle-black-transparent.png"
-                  width="90"
-                  height="90"
-                />
-              </div>
-              <div class="nk-feature-cont">
-                <h3 class="nk-feature-title">clan name</h3>
-                <a href="javascript:void(0)">
-                  <h4 class="nk-feature-title text-main-1">stats del clan</h4>
-                </a>
+              <div class="col-lg-4">
+                <div class="nk-feature-1">
+                  <div class="nk-feature-icon">
+                    <img
+                      class="rounded-circle"
+                      src="https://arhsnewspaper.com/wp-content/uploads/2016/12/test.jpg"
+                      width="86"
+                      height="86"
+                    />
+                  </div>
+                  <div class="nk-feature-cont" style="padding-left: 13px">
+                    <h3 class="nk-feature-title">
+                      <a href="javascript:void(0)">Clan name</a>
+                    </h3>
+                    <h4 class="nk-feature-title text-main-1">
+                      <a href="javascript:void(0)">ver stats del clan</a>
+                    </h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="nk-gap-2"></div>
         <div class="nk-main">
           <div class="nk-gap-2"></div>
           <div class="container">
