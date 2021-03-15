@@ -3,8 +3,7 @@
     <div class="nk-gap-3"></div>
     <div class="container">
       <div class="row">
-        <div class="col"></div>
-        <div class="col-md-12 col-lg-6">
+        <div class="col-md-12 col-lg-6 col-xl-7 offset-xl-0">
           <div class="table-responsive">
             <table class="table table-striped table-hover table-dark table-sm">
               <tbody>
@@ -17,6 +16,7 @@
                   </td>
                   <td>Servidor #1</td>
                   <td>123.123.123.123:27015</td>
+                  <td>de_dust2</td>
                   <td>32/32</td>
                   <td style="font-size: 18px">
                     <a
@@ -35,6 +35,7 @@
                   </td>
                   <td>Servidor #1</td>
                   <td>123.123.123.123:27015</td>
+                  <td>de_dust2</td>
                   <td>32/32</td>
                   <td style="font-size: 18px">
                     <a
@@ -53,6 +54,7 @@
                   </td>
                   <td>Servidor #1</td>
                   <td>123.123.123.123:27015</td>
+                  <td>de_dust2</td>
                   <td>32/32</td>
                   <td style="font-size: 18px">
                     <a
@@ -74,7 +76,7 @@
             </table>
           </div>
         </div>
-        <div class="col"></div>
+        <div class="col-lg-6 col-xl-5 offset-lg-0"></div>
       </div>
     </div>
   </div>
